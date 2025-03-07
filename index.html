@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -5,11 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bilete de astăzi</title>
     <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 20px;
-            line-height: 1.6;
-        }
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .ticket-buttons { margin-bottom: 20px; }
         .ticket-button {
             padding: 10px 20px;
             margin: 5px;
@@ -19,427 +17,385 @@
             border-radius: 4px;
             cursor: pointer;
         }
-        .ticket-button:hover {
-            background-color: #2980b9;
+        .ticket-button:hover { background-color: #2980b9; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            display: none;
         }
-        .ticket-button.active {
-            background-color: #2ecc71;
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
         }
+        th { background-color: #f5f5f5; }
         .ticket-info {
-            margin: 20px 0;
-            padding: 15px;
+            margin-top: 20px;
+            padding: 10px;
             background-color: #f8f9fa;
             border-radius: 4px;
-        }
-        .ticket-content {
             display: none;
-            margin-top: 20px;
-        }
-        .ticket-content.active {
-            display: block;
-        }
-        .match {
-            padding: 10px;
-            margin-bottom: 10px;
-            border-bottom: 1px solid #eee;
-        }
-        .match:last-child {
-            border-bottom: none;
-        }
-        .match-time {
-            color: #666;
-            font-weight: bold;
-        }
-        .match-teams {
-            margin: 5px 0;
-        }
-        .match-prediction {
-            color: #2ecc71;
-            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <h1>Bilete de astăzi</h1>
-    
-    <div id="buttons">
+    <div class="ticket-buttons">
+
         <button class="ticket-button" onclick="showTicket(0)">Bilet 1</button>
         <button class="ticket-button" onclick="showTicket(1)">Bilet 2</button>
         <button class="ticket-button" onclick="showTicket(2)">Bilet 3</button>
         <button class="ticket-button" onclick="showTicket(3)">Bilet 4</button>
         <button class="ticket-button" onclick="showTicket(4)">Bilet 5</button>
-        <button class="ticket-button" onclick="showTicket(5)">Bilet 6</button>
-        <button class="ticket-button" onclick="showTicket(6)">Bilet 7</button>
-    </div>
-
-    <div id="ticket-0" class="ticket-content">
+    <div id="ticket_0" style="display: none;">
         <div class="ticket-info">
-            <div>Cota totală: 106.87</div>
-            <div>Câștig potențial: 493,89 RON</div>
+            <strong>Cota totală:</strong> 1377.17<br>
+            <strong>Câștig potențial:</strong> 6 360,94
         </div>
-        <div class="matches">
-            <div class="match">
-                <div class="match-time">21:00</div>
-                <div class="match-teams">Bastia - Martigues</div>
-                <div class="match-prediction">Final: Martigues</div>
-            </div>
-            <div class="match">
-                <div class="match-time">21:00</div>
-                <div class="match-teams">Caen - Laval</div>
-                <div class="match-prediction">Ambele marcheaza: Nu</div>
-            </div>
-            <div class="match">
-                <div class="match-time">21:45</div>
-                <div class="match-teams">Toulouse - Monaco</div>
-                <div class="match-prediction">Total goluri: - 2.5</div>
-            </div>
-            <div class="match">
-                <div class="match-time">21:45</div>
-                <div class="match-teams">Cagliari - Genoa</div>
-                <div class="match-prediction">Ambele marcheaza: Nu</div>
-            </div>
-            <div class="match">
-                <div class="match-time">21:00</div>
-                <div class="match-teams">Guingamp - Clermont</div>
-                <div class="match-prediction">Total goluri: - 2.5</div>
-            </div>
-            <div class="match">
-                <div class="match-time">21:30</div>
-                <div class="match-teams">Cosenza - Reggiana</div>
-                <div class="match-prediction">Ambele marcheaza: Nu</div>
-            </div>
-        </div>
+        <table id="table_0">
+            <tr>
+                <th>Ora</th>
+                <th>Echipa 1</th>
+                <th>Echipa 2</th>
+                <th>Predicție</th>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Toulouse</td>
+                <td>Monaco</td>
+                <td>Prima repriza: X</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Cagliari</td>
+                <td>Genoa</td>
+                <td>Total goluri: - 2.5</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Norwich</td>
+                <td>Oxford Utd</td>
+                <td>Prima repriza: X</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Bastia</td>
+                <td>Martigues</td>
+                <td>Ambele marcheaza: Nu</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Caen</td>
+                <td>Laval</td>
+                <td>Prima repriza: X</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Grenoble</td>
+                <td>AC Ajaccio</td>
+                <td>Final: AC Ajaccio</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Guingamp</td>
+                <td>Clermont</td>
+                <td>Final: Clermont</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Pau FC</td>
+                <td>Troyes</td>
+                <td>Total goluri: - 2.5</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Red Star</td>
+                <td>Amiens</td>
+                <td>Ambele marcheaza: Nu</td>
+            </tr>
+        </table>
     </div>
-
-    <div id="ticket-1" class="ticket-content">
+    <div id="ticket_1" style="display: none;">
         <div class="ticket-info">
-            <div>Cota totală: 36.69</div>
-            <div>Câștig potențial: 169,70 RON</div>
+            <strong>Cota totală:</strong> 975.99<br>
+            <strong>Câștig potențial:</strong> 4 508,59
         </div>
-        <div class="matches">
-            <div class="match">
-                <div class="match-time">21:00</div>
-                <div class="match-teams">Bastia - Martigues</div>
-                <div class="match-prediction">Final: Bastia</div>
-            </div>
-            <div class="match">
-                <div class="match-time">21:00</div>
-                <div class="match-teams">Caen - Laval</div>
-                <div class="match-prediction">Ambele marcheaza: Da</div>
-            </div>
-            <div class="match">
-                <div class="match-time">21:45</div>
-                <div class="match-teams">Toulouse - Monaco</div>
-                <div class="match-prediction">Echipa 1 Total goluri: + 1.5</div>
-            </div>
-            <div class="match">
-                <div class="match-time">21:45</div>
-                <div class="match-teams">Cagliari - Genoa</div>
-                <div class="match-prediction">Ambele marcheaza: Da</div>
-            </div>
-            <div class="match">
-                <div class="match-time">21:00</div>
-                <div class="match-teams">Guingamp - Clermont</div>
-                <div class="match-prediction">Echipa 1 Total goluri: + 1.5</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Grenoble - AC Ajaccio</div>
-                <div class="match-prediction">Prima repriza: X</div>
-            </div>
-        </div>
+        <table id="table_1">
+            <tr>
+                <th>Ora</th>
+                <th>Echipa 1</th>
+                <th>Echipa 2</th>
+                <th>Predicție</th>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Toulouse</td>
+                <td>Monaco</td>
+                <td>Final: Toulouse</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Cagliari</td>
+                <td>Genoa</td>
+                <td>Echipa 1 Total goluri: + 1.5</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Norwich</td>
+                <td>Oxford Utd</td>
+                <td>Echipa 1 Total goluri: + 1.5</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Bastia</td>
+                <td>Martigues</td>
+                <td>Final: Bastia</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Caen</td>
+                <td>Laval</td>
+                <td>Total goluri: + 2.5</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Grenoble</td>
+                <td>AC Ajaccio</td>
+                <td>Echipa 1 Total goluri: + 1.5</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Guingamp</td>
+                <td>Clermont</td>
+                <td>Echipa 1 Total goluri: + 1.5</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Pau FC</td>
+                <td>Troyes</td>
+                <td>Echipa 1 Total goluri: + 1.5</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Red Star</td>
+                <td>Amiens</td>
+                <td>Total goluri: + 2.5</td>
+            </tr>
+        </table>
     </div>
-
-    <div id="ticket-2" class="ticket-content">
+    <div id="ticket_2" style="display: none;">
         <div class="ticket-info">
-            <div>Cota totală: 1377.17</div>
-            <div>Câștig potențial: 6 360,94 RON</div>
+            <strong>Cota totală:</strong> 206106.67<br>
+            <strong>Câștig potențial:</strong> 315 050,00
         </div>
-        <div class="matches">
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Toulouse - Monaco</div>
-                <div class="match-prediction">Prima repriza: X</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Cagliari - Genoa</div>
-                <div class="match-prediction">Total goluri: - 2.5</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Norwich - Oxford Utd</div>
-                <div class="match-prediction">Prima repriza: X</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Bastia - Martigues</div>
-                <div class="match-prediction">Ambele marcheaza: Nu</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Caen - Laval</div>
-                <div class="match-prediction">Prima repriza: X</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Grenoble - AC Ajaccio</div>
-                <div class="match-prediction">Final: AC Ajaccio</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Guingamp - Clermont</div>
-                <div class="match-prediction">Final: Clermont</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Pau FC - Troyes</div>
-                <div class="match-prediction">Total goluri: - 2.5</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Red Star - Amiens</div>
-                <div class="match-prediction">Ambele marcheaza: Nu</div>
-            </div>
-        </div>
+        <table id="table_2">
+            <tr>
+                <th>Ora</th>
+                <th>Echipa 1</th>
+                <th>Echipa 2</th>
+                <th>Predicție</th>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Toulouse</td>
+                <td>Monaco</td>
+                <td>Echipa 1 Total goluri: + 1.5</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Cagliari</td>
+                <td>Genoa</td>
+                <td>Ambele marcheaza: Da</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Norwich</td>
+                <td>Oxford Utd</td>
+                <td>Echipa 2 Total goluri: + 1.5</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Bastia</td>
+                <td>Martigues</td>
+                <td>Final: Martigues</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Caen</td>
+                <td>Laval</td>
+                <td>Prima repriza: total goluri Echipa 1: + 1.5</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Grenoble</td>
+                <td>AC Ajaccio</td>
+                <td>Total goluri: + 2.5</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Guingamp</td>
+                <td>Clermont</td>
+                <td>Prima repriza: total goluri Echipa 1: + 1.5</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Pau FC</td>
+                <td>Troyes</td>
+                <td>Echipa 2 Total goluri: + 1.5</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Red Star</td>
+                <td>Amiens</td>
+                <td>Prima repriza: total goluri Echipa 1: + 1.5</td>
+            </tr>
+        </table>
     </div>
-
-    <div id="ticket-3" class="ticket-content">
+    <div id="ticket_3" style="display: none;">
         <div class="ticket-info">
-            <div>Cota totală: 975.99</div>
-            <div>Câștig potențial: 4 508,59 RON</div>
+            <strong>Cota totală:</strong> 623.95<br>
+            <strong>Câștig potențial:</strong> 2 882,20
         </div>
-        <div class="matches">
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Toulouse - Monaco</div>
-                <div class="match-prediction">Final: Toulouse</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Cagliari - Genoa</div>
-                <div class="match-prediction">Echipa 1 Total goluri: + 1.5</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Norwich - Oxford Utd</div>
-                <div class="match-prediction">Echipa 1 Total goluri: + 1.5</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Bastia - Martigues</div>
-                <div class="match-prediction">Final: Bastia</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Caen - Laval</div>
-                <div class="match-prediction">Total goluri: + 2.5</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Grenoble - AC Ajaccio</div>
-                <div class="match-prediction">Echipa 1 Total goluri: + 1.5</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Guingamp - Clermont</div>
-                <div class="match-prediction">Echipa 1 Total goluri: + 1.5</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Pau FC - Troyes</div>
-                <div class="match-prediction">Echipa 1 Total goluri: + 1.5</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Red Star - Amiens</div>
-                <div class="match-prediction">Total goluri: + 2.5</div>
-            </div>
-        </div>
+        <table id="table_3">
+            <tr>
+                <th>Ora</th>
+                <th>Echipa 1</th>
+                <th>Echipa 2</th>
+                <th>Predicție</th>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Toulouse</td>
+                <td>Monaco</td>
+                <td>Ambele marcheaza: Nu</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Cagliari</td>
+                <td>Genoa</td>
+                <td>Prima repriza: X</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Norwich</td>
+                <td>Oxford Utd</td>
+                <td>Ambele marcheaza: Nu</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Bastia</td>
+                <td>Martigues</td>
+                <td>Prima repriza: X</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Caen</td>
+                <td>Laval</td>
+                <td>Ambele marcheaza: Nu</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Grenoble</td>
+                <td>AC Ajaccio</td>
+                <td>Total goluri: - 2.5</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Guingamp</td>
+                <td>Clermont</td>
+                <td>Total goluri: - 2.5</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Pau FC</td>
+                <td>Troyes</td>
+                <td>Final: Troyes</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Red Star</td>
+                <td>Amiens</td>
+                <td>Prima repriza: X</td>
+            </tr>
+        </table>
     </div>
-
-    <div id="ticket-4" class="ticket-content">
+    <div id="ticket_4" style="display: none;">
         <div class="ticket-info">
-            <div>Cota totală: 206106.67</div>
-            <div>Câștig potențial: 315 050,00 RON</div>
+            <strong>Cota totală:</strong> 2892.60<br>
+            <strong>Câștig potențial:</strong> 12 719,29
         </div>
-        <div class="matches">
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Toulouse - Monaco</div>
-                <div class="match-prediction">Echipa 1 Total goluri: + 1.5</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Cagliari - Genoa</div>
-                <div class="match-prediction">Ambele marcheaza: Da</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Norwich - Oxford Utd</div>
-                <div class="match-prediction">Echipa 2 Total goluri: + 1.5</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Bastia - Martigues</div>
-                <div class="match-prediction">Final: Martigues</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Caen - Laval</div>
-                <div class="match-prediction">Prima repriza: total goluri Echipa 1: + 1.5</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Grenoble - AC Ajaccio</div>
-                <div class="match-prediction">Total goluri: + 2.5</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Guingamp - Clermont</div>
-                <div class="match-prediction">Prima repriza: total goluri Echipa 1: + 1.5</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Pau FC - Troyes</div>
-                <div class="match-prediction">Echipa 2 Total goluri: + 1.5</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Red Star - Amiens</div>
-                <div class="match-prediction">Prima repriza: total goluri Echipa 1: + 1.5</div>
-            </div>
-        </div>
+        <table id="table_4">
+            <tr>
+                <th>Ora</th>
+                <th>Echipa 1</th>
+                <th>Echipa 2</th>
+                <th>Predicție</th>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Toulouse</td>
+                <td>Monaco</td>
+                <td>Ambele marcheaza: Da</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Cagliari</td>
+                <td>Genoa</td>
+                <td>Echipa 2 Total goluri: + 1.5</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Norwich</td>
+                <td>Oxford Utd</td>
+                <td>Total goluri: + 2.5</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Bastia</td>
+                <td>Martigues</td>
+                <td>Ambele marcheaza: Da</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Caen</td>
+                <td>Laval</td>
+                <td>Total goluri: - 2.5</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Grenoble</td>
+                <td>AC Ajaccio</td>
+                <td>Echipa 2 Total goluri: + 1.5</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Guingamp</td>
+                <td>Clermont</td>
+                <td>Echipa 2 Total goluri: + 1.5</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Pau FC</td>
+                <td>Troyes</td>
+                <td>Ambele marcheaza: Da</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Red Star</td>
+                <td>Amiens</td>
+                <td>Prima repriza: 1</td>
+            </tr>
+        </table>
     </div>
-
-    <div id="ticket-5" class="ticket-content">
-        <div class="ticket-info">
-            <div>Cota totală: 623.95</div>
-            <div>Câștig potențial: 2 882,20 RON</div>
-        </div>
-        <div class="matches">
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Toulouse - Monaco</div>
-                <div class="match-prediction">Ambele marcheaza: Nu</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Cagliari - Genoa</div>
-                <div class="match-prediction">Prima repriza: X</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Norwich - Oxford Utd</div>
-                <div class="match-prediction">Ambele marcheaza: Nu</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Bastia - Martigues</div>
-                <div class="match-prediction">Prima repriza: X</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Caen - Laval</div>
-                <div class="match-prediction">Ambele marcheaza: Nu</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Grenoble - AC Ajaccio</div>
-                <div class="match-prediction">Total goluri: - 2.5</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Guingamp - Clermont</div>
-                <div class="match-prediction">Total goluri: - 2.5</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Pau FC - Troyes</div>
-                <div class="match-prediction">Final: Troyes</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Red Star - Amiens</div>
-                <div class="match-prediction">Prima repriza: X</div>
-            </div>
-        </div>
-    </div>
-
-    <div id="ticket-6" class="ticket-content">
-        <div class="ticket-info">
-            <div>Cota totală: 2892.60</div>
-            <div>Câștig potențial: 12 719,29 RON</div>
-        </div>
-        <div class="matches">
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Toulouse - Monaco</div>
-                <div class="match-prediction">Ambele marcheaza: Da</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Cagliari - Genoa</div>
-                <div class="match-prediction">Echipa 2 Total goluri: + 1.5</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Norwich - Oxford Utd</div>
-                <div class="match-prediction">Total goluri: + 2.5</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Bastia - Martigues</div>
-                <div class="match-prediction">Ambele marcheaza: Da</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Caen - Laval</div>
-                <div class="match-prediction">Total goluri: - 2.5</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Grenoble - AC Ajaccio</div>
-                <div class="match-prediction">Echipa 2 Total goluri: + 1.5</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Guingamp - Clermont</div>
-                <div class="match-prediction">Echipa 2 Total goluri: + 1.5</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Pau FC - Troyes</div>
-                <div class="match-prediction">Ambele marcheaza: Da</div>
-            </div>
-            <div class="match">
-                <div class="match-time">-</div>
-                <div class="match-teams">Red Star - Amiens</div>
-                <div class="match-prediction">Prima repriza: 1</div>
-            </div>
-        </div>
-    </div>
-
     <script>
         function showTicket(index) {
-            // Ascunde toate biletele
-            document.querySelectorAll('.ticket-content').forEach(ticket => {
-                ticket.classList.remove('active');
-            });
+            // Ascundem toate tabelele și informațiile
+            document.querySelectorAll('table, .ticket-info').forEach(el => el.style.display = 'none');
             
-            // Dezactivează toate butoanele
-            document.querySelectorAll('.ticket-button').forEach(button => {
-                button.classList.remove('active');
-            });
-            
-            // Arată biletul selectat și activează butonul
-            document.getElementById('ticket-' + index).classList.add('active');
-            document.querySelectorAll('.ticket-button')[index].classList.add('active');
-        }
-
-        // Arată primul bilet la încărcare
-        window.onload = function() {
-            showTicket(0);
+            // Afișăm tabelul și informațiile biletului selectat
+            document.getElementById('ticket_' + index).querySelector('table').style.display = 'table';
+            document.getElementById('ticket_' + index).querySelector('.ticket-info').style.display = 'block';
         }
     </script>
 </body>
